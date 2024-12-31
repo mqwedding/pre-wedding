@@ -115,8 +115,8 @@
 /*** Header ***/
 #home {
     margin-bottom: 6rem;
-    background: url(../img/background-banner-1.png) left top no-repeat;
-    height: 100%;
+    background: url(../img/background-banner-1.jpeg) left top no-repeat;
+    width: 100%;
 }
 
 .typed-cursor {
