@@ -309,7 +309,7 @@
                 </div>
                 <div class="col-lg-6 text-lg-end">
                     <ul class="list-inline mx-n3 mb-0" id="portfolio-flters">
-                        <li class="mx-3 active" data-filter="*">All Image</li>
+                        <li class="mx-3 active">All Image</li>
                         <li class="mx-3" data-filter=".first">Cầu Ba Son</li>
                         <li class="mx-3" data-filter=".second">Đường Sách</li>
                         <li class="mx-3" data-filter=".third">Studio</li>
@@ -318,7 +318,80 @@
                 </div>
                 <p class="fs-5 fst-italic">👉🏼 Vui lòng chọn từng tab để có thể thấy toàn bộ ảnh 🫣</p>
             </div>
-            <div class="row g-4 portfolio-container wow fadeInUp" data-wow-delay="1s">
+
+            <div class="row g-4 portfolio-container wow" data-wow-delay="1s">
+                <!-- Portfolio items sẽ được tạo bởi JavaScript -->
+              </div>
+              
+              <script>
+                // Danh sách các hình ảnh và các nhóm (filter) của ảnh
+                const images = [
+                  { src: 'img/bason-n-1.jpeg', category: 'first' },
+                  { src: 'img/bason-n-2.jpeg', category: 'first' },
+                  { src: 'img/ds-n-1.jpeg', category: 'second' },
+                  { src: 'img/studio-n-1.jpeg', category: 'third' },
+                  { src: 'img/studio-n-2.jpeg', category: 'third' },
+                  { src: 'img/studio-n-3.jpeg', category: 'third' },
+                  { src: 'img/fs-n-1.jpeg', category: 'fourth' },
+                  { src: 'img/fs-n-2.jpeg', category: 'fourth' },
+                  { src: 'img/fs-n-3.jpeg', category: 'fourth' },
+                  { src: 'img/bason-1.jpeg', category: 'first' },
+                  { src: 'img/bason-2.jpeg', category: 'first' },
+                  { src: 'img/bason-3.jpeg', category: 'first' },
+                  { src: 'img/bason-4.jpeg', category: 'first' },
+                  { src: 'img/bason-5.jpeg', category: 'first' },
+                  { src: 'img/ds-1.jpeg', category: 'second' },
+                  { src: 'img/ds-2.jpeg', category: 'second' },
+                  { src: 'img/ds-3.jpeg', category: 'second' },
+                  { src: 'img/ds-4.jpeg', category: 'second' },
+                  { src: 'img/studio-1.jpeg', category: 'third' },
+                  { src: 'img/studio-2.jpeg', category: 'third' },
+                  { src: 'img/studio-3.jpeg', category: 'third' },
+                  { src: 'img/fs-1.jpeg', category: 'fourth' },
+                  { src: 'img/fs-2.jpeg', category: 'fourth' },
+                  { src: 'img/fs-3.jpeg', category: 'fourth' }
+                ];
+              
+                // Tạo các phần tử cho mỗi ảnh
+                const container = document.querySelector('.portfolio-container');
+              
+                images.forEach((image, index) => {
+                  const col = document.createElement('div');
+                  col.classList.add('col-lg-4', 'col-md-6', 'portfolio-item', image.category);
+                  col.setAttribute('data-wow-delay', index < 6 ? '0.1s' : '0.3s');  // Thêm delay khác nhau cho các ảnh
+              
+                  const portfolioImg = document.createElement('div');
+                  portfolioImg.classList.add('portfolio-img', 'rounded', 'overflow-hidden');
+              
+                  const img = document.createElement('img');
+                  img.classList.add('img-fluid');
+                  img.src = image.src;
+                  img.alt = '';
+              
+                  const portfolioBtn = document.createElement('div');
+                  portfolioBtn.classList.add('portfolio-btn');
+              
+                  const link = document.createElement('a');
+                  link.classList.add('btn', 'btn-lg-square', 'btn-outline-secondary', 'border-2', 'mx-1');
+                  link.href = image.src;
+                  link.setAttribute('data-lightbox', 'portfolio');
+                  
+                  const icon = document.createElement('i');
+                  icon.classList.add('fa', 'fa-eye');
+                  
+                  link.appendChild(icon);
+                  portfolioBtn.appendChild(link);
+                  portfolioImg.appendChild(img);
+                  portfolioImg.appendChild(portfolioBtn);
+                  col.appendChild(portfolioImg);
+              
+                  container.appendChild(col);
+                });
+              </script>
+              
+
+            <!--
+            <div class="row g-4 portfolio-container wow" data-wow-delay="1s">
                 <div class="col-lg-4 col-md-6 portfolio-item first" data-wow-delay="0.1s">
                     <div class="portfolio-img rounded overflow-hidden">
                         <img class="img-fluid" src="img/bason-n-1.jpeg" alt="">
@@ -511,7 +584,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
     <!-- Pre-Wedding Gallery End -->

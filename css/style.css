@@ -307,6 +307,30 @@
     padding-bottom: 30px !important;
 }
 
+.portfolio-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Thêm khoảng cách giữa các phần tử */
+}
+
+.portfolio-item {
+    width: calc(33.333% - 20px); /* Đảm bảo các phần tử không chiếm toàn bộ chiều rộng */
+    margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+    .portfolio-item {
+        width: calc(50% - 20px); /* Khi màn hình nhỏ, 2 ảnh trên 1 dòng */
+    }
+}
+
+@media (max-width: 576px) {
+    .portfolio-item {
+        width: 100%; /* Khi màn hình rất nhỏ, 1 ảnh trên 1 dòng */
+    }
+}
+
+
 
 /*** Team ***/
 .team-item img {
