@@ -308,24 +308,6 @@
 }
 
 
-.portfolio-item {
-    margin-bottom: 30px; /* Khoảng cách giữa các ảnh */
-    position: relative;
-}
-
-.portfolio-img {
-    position: relative;
-    overflow: hidden;
-    width: 100%;  /* Đảm bảo ảnh không bị biến dạng */
-}
-
-img {
-    width: 100%; /* Đảm bảo ảnh chiếm hết không gian của div chứa */
-    height: auto;
-    object-fit: cover; /* Đảm bảo ảnh không bị kéo giãn */
-}
-
-
 /*** Team ***/
 .team-item img {
     transition: .5s;
